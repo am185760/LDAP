@@ -1,0 +1,198 @@
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\LDAP.exe
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\LDAP.deps.json
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\LDAP.runtimeconfig.json
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\LDAP.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\LDAP.pdb
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\System.DirectoryServices.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\System.Windows.Extensions.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.AssemblyReference.cache
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.AssemblyInfoInputs.cache
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.AssemblyInfo.cs
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.CoreCompileInputs.cache
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.CopyComplete
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\refint\LDAP.dll
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.pdb
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\LDAP.genruntimeconfig.cache
+C:\Users\am185760\source\repos\LDAP\LDAP\obj\Debug\net7.0\ref\LDAP.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\LDAP.exe
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\LDAP.deps.json
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\LDAP.runtimeconfig.json
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\LDAP.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\LDAP.pdb
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Azure.Core.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Azure.Identity.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Humanizer.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.CodeDom.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.DirectoryServices.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Memory.Data.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Runtime.Caching.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Windows.Extensions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\EView360Models.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Encryption.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\ICSharpCode.SharpZipLib.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\EView360Models.pdb
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\Encryption.pdb
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\ICSharpCode.SharpZipLib.pdb
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\ICSharpCode.SharpZipLib.xml
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.AssemblyReference.cache
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.AssemblyInfoInputs.cache
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.AssemblyInfo.cs
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.CoreCompileInputs.cache
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.CopyComplete
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.dll
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\refint\LDAP.dll
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.pdb
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\LDAP.genruntimeconfig.cache
+C:\Jabbar\GitProject\LDAP\LDAP\obj\Debug\net7.0\ref\LDAP.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.DirectoryServices.AccountManagement.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\System.DirectoryServices.Protocols.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.Messages.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.AccountManagement.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\linux\lib\net7.0\System.DirectoryServices.Protocols.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\osx\lib\net7.0\System.DirectoryServices.Protocols.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.Protocols.dll
+C:\Jabbar\GitProject\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\LDAP.exe
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\LDAP.deps.json
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\LDAP.runtimeconfig.json
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\LDAP.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\LDAP.pdb
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Azure.Core.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Azure.Identity.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Humanizer.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.CodeDom.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.DirectoryServices.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.DirectoryServices.AccountManagement.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.DirectoryServices.Protocols.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Memory.Data.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.Messages.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.AccountManagement.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\linux\lib\net7.0\System.DirectoryServices.Protocols.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\osx\lib\net7.0\System.DirectoryServices.Protocols.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.DirectoryServices.Protocols.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\EView360Models.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Encryption.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\ICSharpCode.SharpZipLib.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\EView360Models.pdb
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\Encryption.pdb
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\ICSharpCode.SharpZipLib.pdb
+D:\View360\Repository - View360 Depart\LDAP\LDAP\bin\Debug\net7.0\ICSharpCode.SharpZipLib.xml
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.AssemblyReference.cache
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.GeneratedMSBuildEditorConfig.editorconfig
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.AssemblyInfoInputs.cache
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.AssemblyInfo.cs
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.CoreCompileInputs.cache
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.sourcelink.json
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.csproj.Up2Date
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\refint\LDAP.dll
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.pdb
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\LDAP.genruntimeconfig.cache
+D:\View360\Repository - View360 Depart\LDAP\LDAP\obj\Debug\net7.0\ref\LDAP.dll
