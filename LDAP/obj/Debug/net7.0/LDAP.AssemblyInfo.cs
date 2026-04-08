@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LDAP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec051cc489c6b677f22689f8de7ba1e68c3acdd0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdbdf5eba651733fa3480adfc6be3e5dce1f28f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("LDAP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LDAP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
