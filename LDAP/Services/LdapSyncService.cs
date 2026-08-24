@@ -41,8 +41,8 @@ public class LdapSyncService
 
         try
         {
-            await SyncGroupsAsync(entry, stoppingToken);
-            await SyncUsersAsync(entry, stoppingToken);
+            var adGroupDns = await SyncGroupsAsync(entry, stoppingToken);
+            await SyncUsersAsync(entry, adGroupDns, stoppingToken);
             await _context.SaveChangesAsync(stoppingToken);
             _logger.LogWarning("LDAP sync completed successfully.");
         }
@@ -96,52 +96,78 @@ public class LdapSyncService
         }
     }
 
-    private async Task SyncGroupsAsync(DirectoryEntry entry, CancellationToken stoppingToken)
+    private async Task<List<string>> SyncGroupsAsync(DirectoryEntry entry, CancellationToken stoppingToken)
     {
         _logger.LogWarning("Syncing Groups...");
 
-        using var searcher = new DirectorySearcher(entry)
-        {
-            Filter = "(&(objectCategory=group))",
-            PageSize = 1000 // Paging for large AD queries
-        };
-        
-        // Performance consideration: Only load needed properties
-        searcher.PropertiesToLoad.Add("cn");
-
         try
         {
+            string groupFilter = "(objectCategory=group)";
+            if (_ldapSettings.TargetGroups != null && _ldapSettings.TargetGroups.Length > 0)
+            {
+                var allowedGroupFilters = string.Join("", _ldapSettings.TargetGroups.Select(g => $"(cn={g})"));
+                groupFilter = $"(&{groupFilter}(|{allowedGroupFilters}))";
+            }
+            else
+            {
+                groupFilter = $"(&{groupFilter})";
+            }
+
+            using var searcher = new DirectorySearcher(entry)
+            {
+                Filter = groupFilter,
+                PageSize = 1000 // Paging for large AD queries
+            };
+            
+            // Performance consideration: Only load needed properties
+            searcher.PropertiesToLoad.Add("cn");
+            searcher.PropertiesToLoad.Add("distinguishedName");
             using var results = searcher.FindAll();
             var existingGroups = await _context.Groups.ToListAsync(stoppingToken);
             var adGroupNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
             int processedCount = 0;
 
+            var adGroupDns = new List<string>();
+
             foreach (SearchResult result in results)
             {
                 if (stoppingToken.IsCancellationRequested) break;
 
-                string groupName = GetProperty(result, "cn");
-                if (string.IsNullOrEmpty(groupName)) continue;
-
-                adGroupNames.Add(groupName);
-                
-                var group = existingGroups.FirstOrDefault(g => g.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
-                
-                if (group == null)
+                try
                 {
-                    _context.Groups.Add(new Group
+                    string groupName = GetProperty(result, "cn");
+                    string groupDn = GetProperty(result, "distinguishedName");
+                    if (string.IsNullOrEmpty(groupName)) continue;
+
+                    if (!string.IsNullOrEmpty(groupDn))
                     {
-                        GroupName = groupName,
-                        Status = "Active" // Or any default status
-                    });
-                }
-                else
-                {
-                    group.Status = "Active"; // Sync strategy: if it exists, ensure it is active
-                }
+                        adGroupDns.Add(groupDn);
+                    }
 
-                processedCount++;
+                    adGroupNames.Add(groupName);
+                    
+                    var group = existingGroups.FirstOrDefault(g => g.GroupName.Equals(groupName, StringComparison.OrdinalIgnoreCase));
+                    
+                    if (group == null)
+                    {
+                        _context.Groups.Add(new Group
+                        {
+                            GroupName = groupName,
+                            Status = "Active" // Or any default status
+                        });
+                    }
+                    else
+                    {
+                        group.Status = "Active"; // Sync strategy: if it exists, ensure it is active
+                    }
+
+                    processedCount++;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error processing a group record from AD.");
+                }
             }
 
             // Make inactive or handle missing
@@ -157,30 +183,46 @@ public class LdapSyncService
             await _context.SaveChangesAsync(stoppingToken);
 
             _logger.LogWarning($"Processed {processedCount} groups.");
+            return adGroupDns;
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error occurred while syncing groups");
+            return new List<string>();
         }
     }
 
-    private async Task SyncUsersAsync(DirectoryEntry entry, CancellationToken stoppingToken)
+    private async Task SyncUsersAsync(DirectoryEntry entry, List<string> adGroupDns, CancellationToken stoppingToken)
     {
         _logger.LogWarning("Syncing Users & Group Mappings...");
 
-        using var searcher = new DirectorySearcher(entry)
-        {
-            Filter = "(&(objectCategory=person)(objectClass=user))",
-            PageSize = 1000 // Paging for large queries
-        };
-
-        searcher.PropertiesToLoad.Add("sAMAccountName");
-        searcher.PropertiesToLoad.Add("displayName");
-        searcher.PropertiesToLoad.Add("mail");
-        searcher.PropertiesToLoad.Add("memberOf");
-
         try
         {
+            string userFilter = "(&(objectCategory=person)(objectClass=user))";
+            
+            // If we are targeting specific groups, filter users by memberOf those groups
+            if (adGroupDns != null && adGroupDns.Count > 0)
+            {
+                // Note: If you have nested groups, you can use LDAP_MATCHING_RULE_IN_CHAIN: (memberOf:1.2.840.113556.1.4.1941:={dn})
+                var memberFilters = string.Join("", adGroupDns.Select(dn => $"(memberOf={dn})"));
+                userFilter = $"(&{userFilter}(|{memberFilters}))";
+            }
+            else if (_ldapSettings.TargetGroups != null && _ldapSettings.TargetGroups.Length > 0)
+            {
+                 // Target groups were provided but didn't exist in AD, meaning no users to sync
+                 userFilter = "(&(objectCategory=person)(objectClass=user)(!(objectClass=*)))";
+            }
+
+            using var searcher = new DirectorySearcher(entry)
+            {
+                Filter = userFilter,
+                PageSize = 1000 // Paging for large queries
+            };
+
+            searcher.PropertiesToLoad.Add("sAMAccountName");
+            searcher.PropertiesToLoad.Add("displayName");
+            searcher.PropertiesToLoad.Add("mail");
+            searcher.PropertiesToLoad.Add("memberOf");
             using var results = searcher.FindAll();
             
             var existingUsers = await _context.AppUsers
@@ -196,49 +238,54 @@ public class LdapSyncService
             {
                 if (stoppingToken.IsCancellationRequested) break;
 
-                string userName = GetProperty(result, "sAMAccountName");
-                string displayName = GetProperty(result, "displayName");
-                string mail = GetProperty(result, "mail");
-
-                if (string.IsNullOrEmpty(userName)) continue;
-
-                adUserLogins.Add(userName);
-
-                var user = existingUsers.FirstOrDefault(u => u.UserLogin.Equals(userName, StringComparison.OrdinalIgnoreCase));
-
-                if (user == null)
+                try
                 {
-                    // New User Insert
-                    user = new AppUser
+                    string userName = GetProperty(result, "sAMAccountName");
+                    string displayName = GetProperty(result, "displayName");
+                    string mail = GetProperty(result, "mail");
+
+                    if (string.IsNullOrEmpty(userName)) continue;
+
+                    adUserLogins.Add(userName);
+
+                    var user = existingUsers.FirstOrDefault(u => u.UserLogin.Equals(userName, StringComparison.OrdinalIgnoreCase));
+
+                    if (user == null)
                     {
-                        UserLogin = userName,
-                        UserFullName = string.IsNullOrEmpty(displayName) ? userName : displayName,
-                        UserEmail = mail,
-                        UserIsActive = true,
-                        UserCreationTime = DateTime.UtcNow,
-                        IsActiveDirectoryUser = true
-                    };
-                    _context.AppUsers.Add(user);
-                    
-                    _context.AppUsers.Add(user);
-                    
-                    // Force SaveChanges to generate user.UserId so we can safely map it instantly
-                    await _context.SaveChangesAsync(stoppingToken);
+                        // New User Insert
+                        user = new AppUser
+                        {
+                            UserLogin = userName,
+                            UserFullName = string.IsNullOrEmpty(displayName) ? userName : displayName,
+                            UserEmail = mail,
+                            UserIsActive = true,
+                            UserCreationTime = DateTime.UtcNow,
+                            IsActiveDirectoryUser = true
+                        };
+                        _context.AppUsers.Add(user);
+                        
+                        // Force SaveChanges to generate user.UserId so we can safely map it instantly
+                        await _context.SaveChangesAsync(stoppingToken);
+                    }
+                    else
+                    {
+                        // Update user
+                        user.UserFullName = string.IsNullOrEmpty(displayName) ? userName : displayName;
+                        user.UserEmail = mail;
+                        user.UserIsActive = true;
+                        user.IsActiveDirectoryUser = true;
+                        // Note: Intentionally NOT storing passwords locally
+                    }
+
+                    // Handle Sub-Group Mappings using proper EF IDs
+                    SyncUserGroupMappings(result, user, existingGroups);
+
+                    processedCount++;
                 }
-                else
+                catch (Exception ex)
                 {
-                    // Update user
-                    user.UserFullName = string.IsNullOrEmpty(displayName) ? userName : displayName;
-                    user.UserEmail = mail;
-                    user.UserIsActive = true;
-                    user.IsActiveDirectoryUser = true;
-                    // Note: Intentionally NOT storing passwords locally
+                    _logger.LogError(ex, "Error processing a user record from AD.");
                 }
-
-                // Handle Sub-Group Mappings using proper EF IDs
-                SyncUserGroupMappings(result, user, existingGroups);
-
-                processedCount++;
             }
 
             // Inactivate missing users
@@ -263,76 +310,97 @@ public class LdapSyncService
 
     private void SyncUserGroupMappings(SearchResult result, AppUser user, List<Group> existingGroups)
     {
-        var adGroupCNs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-
-        // memberOf can contain multiple values
-        if (result.Properties.Contains("memberOf"))
+        try
         {
-            foreach (var memberOdDn in result.Properties["memberOf"])
+            var adGroupCNs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            // memberOf can contain multiple values
+            if (result.Properties.Contains("memberOf"))
             {
-                string dn = memberOdDn.ToString() ?? string.Empty;
-                string cn = ExtractCNFromDN(dn);
-                if (!string.IsNullOrEmpty(cn))
+                foreach (var memberOdDn in result.Properties["memberOf"])
                 {
-                    adGroupCNs.Add(cn);
-                }
-            }
-        }
-
-        // We use the navigation properties for the mappings (user.GroupUsers)
-        // Ensure user.GroupUsers is not null although initialized in model
-        
-        var currentMappings = user.GroupUsers.ToList();
-        
-        // Remove mappings that are no longer in AD
-        foreach (var mapping in currentMappings)
-        {
-            var matchedGroup = existingGroups.FirstOrDefault(g => g.GroupId == mapping.GroupId);
-            if (matchedGroup != null && !adGroupCNs.Contains(matchedGroup.GroupName))
-            {
-                _context.GroupUsers.Remove(mapping);
-            }
-        }
-
-        // Add new mappings
-        foreach (var adGroupCN in adGroupCNs)
-        {
-            var group = existingGroups.FirstOrDefault(g => g.GroupName.Equals(adGroupCN, StringComparison.OrdinalIgnoreCase));
-            if (group != null)
-            {
-                bool userHasGroup = currentMappings.Any(gu => gu.GroupId == group.GroupId);
-                if (!userHasGroup)
-                {
-                    _context.GroupUsers.Add(new GroupUser
+                    string dn = memberOdDn.ToString() ?? string.Empty;
+                    string cn = ExtractCNFromDN(dn);
+                    if (!string.IsNullOrEmpty(cn))
                     {
-                        UserId = user.UserId,
-                        GroupId = group.GroupId
-                    });
+                        adGroupCNs.Add(cn);
+                    }
                 }
             }
+
+            // We use the navigation properties for the mappings (user.GroupUsers)
+            // Ensure user.GroupUsers is not null although initialized in model
+            
+            var currentMappings = user.GroupUsers.ToList();
+            
+            // Remove mappings that are no longer in AD
+            foreach (var mapping in currentMappings)
+            {
+                var matchedGroup = existingGroups.FirstOrDefault(g => g.GroupId == mapping.GroupId);
+                if (matchedGroup != null && !adGroupCNs.Contains(matchedGroup.GroupName))
+                {
+                    _context.GroupUsers.Remove(mapping);
+                }
+            }
+
+            // Add new mappings
+            foreach (var adGroupCN in adGroupCNs)
+            {
+                var group = existingGroups.FirstOrDefault(g => g.GroupName.Equals(adGroupCN, StringComparison.OrdinalIgnoreCase));
+                if (group != null)
+                {
+                    bool userHasGroup = currentMappings.Any(gu => gu.GroupId == group.GroupId);
+                    if (!userHasGroup)
+                    {
+                        _context.GroupUsers.Add(new GroupUser
+                        {
+                            UserId = user.UserId,
+                            GroupId = group.GroupId
+                        });
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Error syncing group mappings for user '{user.UserLogin}'.");
         }
     }
 
     private string GetProperty(SearchResult result, string propertyName)
     {
-        if (result.Properties.Contains(propertyName) && result.Properties[propertyName].Count > 0)
+        try
         {
-            return result.Properties[propertyName][0]?.ToString() ?? string.Empty;
+            if (result.Properties.Contains(propertyName) && result.Properties[propertyName].Count > 0)
+            {
+                return result.Properties[propertyName][0]?.ToString() ?? string.Empty;
+            }
+        }
+        catch (Exception ex)
+        {
+             _logger.LogWarning(ex, $"Error extracting property '{propertyName}'.");
         }
         return string.Empty;
     }
 
     private string ExtractCNFromDN(string dn)
     {
-        // Example DN: CN=AppAdmins,OU=Groups,DC=bank,DC=com -> Returns "AppAdmins"
-        if (string.IsNullOrEmpty(dn)) return string.Empty;
-
-        var parts = dn.Split(',');
-        var cnPart = parts.FirstOrDefault(p => p.StartsWith("CN=", StringComparison.OrdinalIgnoreCase));
-        
-        if (cnPart != null && cnPart.Length > 3)
+        try
         {
-            return cnPart.Substring(3); // Remove "CN="
+            // Example DN: CN=AppAdmins,OU=Groups,DC=bank,DC=com -> Returns "AppAdmins"
+            if (string.IsNullOrEmpty(dn)) return string.Empty;
+
+            var parts = dn.Split(',');
+            var cnPart = parts.FirstOrDefault(p => p.StartsWith("CN=", StringComparison.OrdinalIgnoreCase));
+            
+            if (cnPart != null && cnPart.Length > 3)
+            {
+                return cnPart.Substring(3); // Remove "CN="
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, $"Error extracting CN from DN '{dn}'.");
         }
 
         return string.Empty;

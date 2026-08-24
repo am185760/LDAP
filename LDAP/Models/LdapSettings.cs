@@ -9,4 +9,5 @@ public class LdapSettings
     public string GroupsOU { get; set; } = string.Empty;
     public string ServiceAccountUsername { get; set; } = string.Empty;
     public string ServiceAccountPassword { get; set; } = string.Empty;
+    public string[] TargetGroups { get; set; } = Array.Empty<string>();
 }
